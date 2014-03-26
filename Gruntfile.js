@@ -15,8 +15,8 @@ module.exports = function(grunt) {
     less: {
       dist: {
         files: {
-          'assets/css/main.min.css': [
-            'assets/less/app.less'
+          'assets/css/style.css': [
+            'assets/less/app.less', 'assets/css/vendor/animate.css/animate.min.css'
           ]
         },
         options: {
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
           // To enable, set sourceMap to true and update sourceMapRootpath based on your install
           sourceMap: false,
           sourceMapFilename: 'assets/css/main.min.css.map',
-          sourceMapRootpath: '/app/themes/roots/'
+          sourceMapRootpath: '/wp-content/themes/timber-starter-theme/'
         }
       }
     },

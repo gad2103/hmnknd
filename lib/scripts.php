@@ -1,5 +1,6 @@
 <?php
 /**
+ * Roots scripts.php file -- https://github.com/roots/roots/blob/master/lib/scripts.php
  * Enqueue scripts and stylesheets
  *
  * Enqueue stylesheets in the following order:
@@ -11,7 +12,7 @@
  * 3. /theme/assets/js/main.min.js (in footer)
  */
 function roots_scripts() {
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, 'c1a58eb4baaf24c3771085df3d54ff8d');
+  wp_enqueue_style('hmnknd_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '9880649384aea9f1ee166331c0a30daa');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -51,6 +52,7 @@ function roots_jquery_local_fallback($src, $handle = null) {
 }
 add_action('wp_head', 'roots_jquery_local_fallback');
 
+//TODO  get analytics id from options menu!
 function roots_google_analytics() { ?>
 <script>
   (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

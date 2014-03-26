@@ -1,12 +1,12 @@
 <?php
 
   // Initialize Redux Options Framework
-  if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/admin/redux-options-framework/ReduxCore/framework.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/admin/redux-options-framework/ReduxCore/framework.php' );
+  /*if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/admin/ReduxFramework/ReduxCore/framework.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/admin/ReduxFramework/ReduxCore/framework.php' );
   }
-  if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/admin/redux-options-framework/sample/sample-config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/admin/redux-options-framework/sample/sample-config.php' );
-  }
+  if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/admin/ReduxFramework/sample/sample-config.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/admin/ReduxFramework/sample/sample-config.php' );
+  }*/
 
   // Custom Framework Includes
   require_once locate_template('/lib/activation.php');
@@ -21,6 +21,7 @@
 	add_action('wp_enqueue_scripts', 'load_scripts');
 
 	define('THEME_URL', get_template_directory_uri());
+
 	function add_to_context($data){
 		/* this is where you can add your own data to Timber's context object */
 		$data['qux'] = 'I am a value set in your functions.php file';

@@ -1,0 +1,12 @@
+{
+  "name": "hmnknd",
+  "version": "1.0.0",
+  "dependencies": {
+    "animate.css": "latest",
+    "fitvids": "latest",
+    "fittext": "latest",
+    "html5shiv": "latest",
+    "respond": "latest",
+    "retina.js": "latest"
+  }
+}
