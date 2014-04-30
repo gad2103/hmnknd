@@ -1,0 +1,107 @@
+/*=================================================================
+  Visual Composer Custom Styles
+  ================================================================= */
+
+@accordion_icon_size: 20px;
+@outline_color: #212121;
+@primary_brand: #162a36;
+@hover_state: #a7a54f;
+@hover_color: #f1f1f1;
+@tab_margin: 40px 0;
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+.bg-clear {
+  background-color: transparent;
+}
+.tab_styles(@hover_bg, @hover_c) {
+  padding: 0 20px;
+  transition: all 0.2s ease-out;
+  &:hover, &.ui-state-active {
+    background:@hover_bg;
+  }
+  &:hover > a, &.ui-state-active > a {
+   color:@hover_c;
+  }
+}
+
+// Tab style overrides
+body .wpb_content_element.wpb_tabs .ui-tabs .ui-tabs-nav li {
+  .tab_styles(@hover_state,@hover_color);
+}
+body .wpb_content_element.wpb_tour .ui-tabs .ui-tabs-nav li {
+  .tab_styles(transparent,@hover_state);
+}
+body .wpb_content_element.wpb_tabs .ui-tabs .ui-tabs-nav li {
+  outline: 1px solid @outline_color;
+}
+body .wpb_content_element.wpb_tabs li {
+  display: inline-block;
+  float:none;
+}
+body #content .wpb_tabs.wpb_content_element .wpb_tabs_nav {
+  text-align:center;
+  width:100%;
+  margin:@tab_margin;
+}
+body .wpb_tour_next_prev_nav span {
+  display:none;
+}
+
+// Accordion style overrides
+body .wpb_accordion .wpb_accordion_wrapper .ui-state-default .ui-icon, .wpb_accordion .wpb_accordion_wrapper .ui-state-active .ui-icon {
+  left:0.7em;
+  width:@accordion_icon_size;
+  height:@accordion_icon_size;
+  top:0.5em;
+}
+body .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header a {
+padding-left: 4em;
+}
+body .wpb_content_element .ui-tabs .ui-tabs-nav li,
+body .wpb_content_element .ui-accordion .ui-accordion-header {
+    .uppercase;
+    .bg-clear;
+}
+body .wpb_content_element.wpb_tabs .wpb_tour_tabs_wrapper .wpb_tab {
+  .bg-clear;
+}
+
+body .wpb_content_element .ui-accordion .ui-accordion-header.ui-state-active,
+body .wpb_tabs .ui-tabs .ui-tabs-panel {
+      outline:none;
+      &:focus {
+        outline:none;
+      }
+}
+ 
+
+body .wpb_content_element .ui-accordion .ui-accordion-header:hover {
+      outline:none;
+}
+body .wpb_accordion .wpb_accordion_wrapper .ui-state-active .ui-icon,
+body .wpb_accordion .wpb_accordion_wrapper .ui-state-default .ui-icon{
+background-size: @accordion_icon_size;
+background-image:none;
+}
+body .wpb_accordion .wpb_accordion_wrapper .ui-state-default .ui-icon:before,
+body .wpb_accordion .wpb_accordion_wrapper .ui-state-active .ui-icon:before
+{
+  width:@accordion_icon_size;
+  height:@accordion_icon_size;
+  font-family:'humankind';
+  font-size:@accordion_icon_size;
+  color:@primary_brand;
+  text-indent:0;
+  font-weight:normal;
+  font-style:normal;
+  display:inline-block;
+  line-height:1em;
+}
+body .wpb_accordion .wpb_accordion_wrapper .ui-state-default .ui-icon:before {
+  content:")";
+}
+body .wpb_accordion .wpb_accordion_wrapper .ui-state-active .ui-icon:before {
+  content:"(";
+}

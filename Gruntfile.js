@@ -15,15 +15,16 @@ module.exports = function(grunt) {
     less: {
       dist: {
         files: {
-          'assets/css/style.css': [
+          'assets/css/main.min.css': [
             'assets/less/app.less', 'assets/css/vendor/animate.css/animate.min.css'
-          ]
+          ],
+          'assets/css/vc_styles.css': 'assets/less/vc_customized.less'
         },
         options: {
-          compress: true,
+          compress: false,
           // LESS source map
           // To enable, set sourceMap to true and update sourceMapRootpath based on your install
-          sourceMap: false,
+          sourceMap: true,
           sourceMapFilename: 'assets/css/main.min.css.map',
           sourceMapRootpath: '/wp-content/themes/timber-starter-theme/'
         }
