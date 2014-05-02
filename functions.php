@@ -8,9 +8,28 @@
     require_once( dirname( __FILE__ ) . '/admin/ReduxFramework/sample/sample-config.php' );
   }*/
 
+  // TODO make this more automated perhaps a loader.php in all relevant directories will load everything and this will call all the loaders
+  $framework_dependencies = array(
+    '/lib/activation.php',
+    '/lib/scripts.php',
+    '/lib/timber/utils.php',
+    '/vc_templates/bartag.php',
+    '/admin/composer/custom-params.php',
+  );
+  
+  function require_all($files) {
+    foreach( $files as $file ) {
+      locate_template($file, true, true);
+    }
+  };
+
   // Custom Framework Includes
-  require_once locate_template('/lib/activation.php');
+  /*require_once locate_template('/lib/activation.php');
   require_once locate_template('/lib/scripts.php');
+  require_once locate_template('/lib/timber/utils.php');*/
+
+  // Load framework in one line
+  require_all($framework_dependencies);
 
 	add_theme_support('post-formats');
 	add_theme_support('post-thumbnails');
@@ -45,7 +64,6 @@
 	function load_scripts(){
 		wp_enqueue_script('jquery');
 	}
-
   /* Tabs
   ---------------------------------------------------------- */
   /*$tab_id_1 = time().'-1-'.rand(0, 100);
