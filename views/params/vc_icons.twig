@@ -5,11 +5,11 @@
   {{ dump(icons) }}
   {% for key, icon_set in icons %}
     <section>
-      <h3>{{ key }}</h3>
-        {% for key, icon in icons %}
+      <h4>{{ key }}</h4>
+        {% for key, icon in icon_set %}
             <a href="#"> 
               <i class="{{ icon }}"></i>
-                {{ key }}
+              <span class="icon-name">{{ key }}</span>
             </a>
         {% endfor %}
     </section>

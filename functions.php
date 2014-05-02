@@ -1,4 +1,43 @@
 <?php
+  define("THEME_DIR", get_template_directory());
+  define("THEME_DIR_URL", get_template_directory_uri());
+  //define("THEME_NAME", $options["theme_name"]);
+  //if ( defined( "ICL_LANGUAGE_CODE" )) {$lang="_".ICL_LANGUAGE_CODE;} else {$lang = "";}
+  //define( "THEME_OPTIONS", $options["theme_name"] . '_options' . $lang );
+  //define("THEME_SLUG", $options["theme_slug"]);
+  
+  /* ------ */
+  define("THEME_STYLES_URL", THEME_DIR_URL . "/assets/css"); // good for styles and javascript b/c of absolute path
+  define("STYLES_VENDOR_URL", THEME_DIR_URL . "/assets/css/vendor"); // good for styles and javascript b/c of absolute path
+  //define("THEME_LESS", THEME_DIR_URI . "/less");
+  //define("THEME_IMAGES", THEME_DIR_URI . "/images");
+  define("THEME_JS", THEME_DIR_URL . "assets/js");
+  
+  define('FONT_BASE_DIR', THEME_DIR . 'assets/fonts');
+  define('FONT_VENDOR_DIR', THEME_DIR . 'assets/fonts/vendor');
+  define('FONT_BASE_URL', THEME_DIR_URL . 'assets/fonts');
+  define('FONT_VENDOR_URL', THEME_DIR_URL . 'assets/fonts/vendor');
+  //define("THEME_CACHE_URI", THEME_DIR_URI . "/cache");
+  
+  /* ------ */
+  define("THEME_FRAMEWORK", THEME_DIR . "/framework");
+  //define("THEME_PLUGINS", THEME_FRAMEWORK . "/plugins");
+  //define("THEME_ACTIONS", THEME_FRAMEWORK . "/actions");
+  //define("THEME_PLUGINS_URI", THEME_DIR_URI . "/framework/plugins" );
+  //define("THEME_SHORTCODES", THEME_FRAMEWORK . "/shortcodes");
+  //define("THEME_WIDGETS", THEME_FRAMEWORK . "/widgets");
+  //define("THEME_SLIDERS", THEME_FRAMEWORK . "/sliders");
+  //define("THEME_HELPERS", THEME_FRAMEWORK . "/helpers");
+  //define("THEME_FUNCTIONS", THEME_FRAMEWORK . "/functions");
+  //define("THEME_CLASSES", THEME_FRAMEWORK . "/classes");
+  
+  /* ------ */
+  define('THEME_ADMIN', THEME_FRAMEWORK . '/admin');
+  //define('THEME_METABOXES', THEME_ADMIN . '/metaboxes');
+  //define('THEME_ADMIN_POST_TYPES', THEME_ADMIN . '/post-types');
+  //define('THEME_GENERATORS', THEME_ADMIN . '/generators');
+  //define('THEME_ADMIN_URI', THEME_DIR_URI . '/framework/admin');
+  define('THEME_ADMIN_ASSETS_URL', THEME_DIR_URL . '/admin/assets');
 
   // Initialize Redux Options Framework
   /*if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/admin/ReduxFramework/ReduxCore/framework.php' ) ) {
@@ -19,14 +58,10 @@
   
   function require_all($files) {
     foreach( $files as $file ) {
-      locate_template($file, true, true);
+      //locate_template($file, true, true);
+      require_once THEME_DIR . $file;
     }
   };
-
-  // Custom Framework Includes
-  /*require_once locate_template('/lib/activation.php');
-  require_once locate_template('/lib/scripts.php');
-  require_once locate_template('/lib/timber/utils.php');*/
 
   // Load framework in one line
   require_all($framework_dependencies);
@@ -44,7 +79,6 @@
 
 	function add_to_context($data){
 		/* this is where you can add your own data to Timber's context object */
-		$data['qux'] = 'I am a value set in your functions.php file';
 		$data['menu'] = new TimberMenu();
 		return $data;
 	}

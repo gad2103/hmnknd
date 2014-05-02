@@ -19,6 +19,7 @@ module.exports = function(grunt) {
             'assets/less/app.less', 'assets/css/vendor/animate.css/animate.min.css'
           ],
           'assets/css/vc_styles.css': 'assets/less/vc_customized.less'
+          //'admin/assets/css/vendor/bootstrap/glyphicons.min.css' : 'assets/less/bootstrap/glyphicons.less'
         },
         options: {
           compress: false,
@@ -109,13 +110,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-wp-version');
+  grunt.loadNpmTasks('grunt-font-awesome-vars');
 
   // Register tasks
   grunt.registerTask('default', [
     'clean',
     'less',
     'uglify',
-    'version'
+    'version',
+    'fontAwesomeVars'
   ]);
   grunt.registerTask('dev', [
     'watch'
