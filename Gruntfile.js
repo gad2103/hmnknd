@@ -18,7 +18,8 @@ module.exports = function(grunt) {
           'assets/css/main.min.css': [
             'assets/less/app.less', 'assets/css/vendor/animate.css/animate.min.css'
           ],
-          'assets/css/vc_styles.css': 'assets/less/vc_customized.less'
+          'assets/css/vc_styles.css': 'assets/less/vc_customized.less',
+          'admin/assets/css/vc_admin_styles.css': 'assets/less/vc_admin.less'
           //'admin/assets/css/vendor/bootstrap/glyphicons.min.css' : 'assets/less/bootstrap/glyphicons.less'
         },
         options: {
@@ -29,6 +30,11 @@ module.exports = function(grunt) {
           sourceMapFilename: 'assets/css/main.min.css.map',
           sourceMapRootpath: '/wp-content/themes/timber-starter-theme/'
         }
+      }
+    },
+    autoprefixer: {
+      no_dest: {
+        src: 'admin/assets/css/vc_admin_styles.css'
       }
     },
     uglify: {
@@ -73,7 +79,7 @@ module.exports = function(grunt) {
           'assets/less/*.less',
           'assets/less/bootstrap/*.less'
         ],
-        tasks: ['less', 'version']
+        tasks: ['less', 'version', 'autoprefixer']
       },
       js: {
         files: [
@@ -110,7 +116,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-wp-version');
-  grunt.loadNpmTasks('grunt-font-awesome-vars');
+  grunt.loadNpmTasks('grunt-autoprefixer');
+  //grunt.loadNpmTasks('grunt-font-awesome-vars');
 
   // Register tasks
   grunt.registerTask('default', [
@@ -118,7 +125,8 @@ module.exports = function(grunt) {
     'less',
     'uglify',
     'version',
-    'fontAwesomeVars'
+    'autoprefixer'
+    //'fontAwesomeVars'
   ]);
   grunt.registerTask('dev', [
     'watch'

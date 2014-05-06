@@ -1,0 +1,49 @@
+/**
+* ADMIN STYLES FOR VISUAL COMPOSER
+**/
+article.vc-icons-wrap .vc-icon-searchbox {
+  margin-bottom: 10px !important;
+}
+article.vc-icons-wrap .vc-icons-preview i {
+  vertical-align: middle;
+  padding-left: 10px;
+}
+article.vc-icons-wrap a {
+  display: inline-block;
+  padding: 4px;
+  width: 32px;
+  text-align: center;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  background: #fff;
+}
+article.vc-icons-wrap a:hover,
+article.vc-icons-wrap a.active {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+}
+article.vc-icons-wrap a:hover i,
+article.vc-icons-wrap a.active i {
+  color: #114c7f;
+}
+article.vc-icons-wrap a.active {
+  outline: 1px solid;
+}
+article.vc-icons-wrap i {
+  font-size: 24px;
+  color: #000;
+}
+article.vc-icons-wrap h4 {
+  font-size: 1.1em;
+  text-align: center;
+}
+article.vc-icons-wrap .vc-icons-wrap-inner {
+  max-height: 300px;
+  margin-top: 10px;
+  padding: 0 30px;
+  overflow-y: scroll;
+}
+article.vc-icons-wrap .vc-icons-wrap-inner span {
+  display: none;
+}

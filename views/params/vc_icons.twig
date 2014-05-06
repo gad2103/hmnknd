@@ -1,18 +1,20 @@
 {# TODO: use settings parameters for more of the stuff in here aka most of the classes can be replaced with stuff from settings #}
 <article class="vc-icons-wrap">
   <div class="wpb_element_label">Choose Icon</div>
-  <input autocomplete="off" size="60" placeholder="Type to filter" type="text" class="{{ icon_filter.class }}" name="{{ icon_filter.name}}">
-  {{ dump(icons) }}
-  {% for key, icon_set in icons %}
-    <section>
-      <h4>{{ key }}</h4>
-        {% for key, icon in icon_set %}
-            <a href="#"> 
-              <i class="{{ icon }}"></i>
-              <span class="icon-name">{{ key }}</span>
-            </a>
-        {% endfor %}
+  <input autocomplete="off" size="60" placeholder="Type to filter" type="text" class="{{ filter_class }}" name="{{ icon_filter.name}}">
+  <span class="vc-icons-preview">Current Icon Preview: <i class=""></i></span>
+  <div class="vc-icons-wrap-inner">
+    {% for set_name, icon_set in icons %}
+    <section class="clearfix">
+      <h4>{{ set_name }}</h4>
+      {% for icon_name, icon in icon_set  %}
+      <a href="#"> 
+        <i class="{{ icon }}"></i>
+        <span class="icon-name {{ icon_name }}">{{ icon_name }}</span>
+      </a>
+      {% endfor %}
     </section>
-  {% endfor %}
+    {% endfor %}
+  </div>
   <input type="hidden" class="wpb_vc_param_value wpb-textinput {{ settings.param_name }} {{ settings.type }}~_type" value="{{ value }} {{ dependency }}" name="{{ settings.param_name }}">
 </article>

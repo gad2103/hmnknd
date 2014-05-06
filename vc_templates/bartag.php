@@ -26,7 +26,7 @@ vc_map(
     "weight" => '',
     "category" => __('Testing'),
     "admin_enqueue_css" => '',
-    "admin_enqueue_js" => '',
+    "admin_enqueue_js" => THEME_ADMIN_ASSETS_URL . '/js/vc-icons.js',
     "icon" => '',
     "js_view" => '',
     "params" => array(

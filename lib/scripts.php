@@ -14,6 +14,7 @@
 function roots_scripts() {
   wp_enqueue_style('hmnknd_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '9880649384aea9f1ee166331c0a30daa');
   wp_enqueue_style('hmnknd_vc_customizations', get_template_directory_uri() . '/assets/css/vc_styles.css', false, '9880649384aea9f1ee166331c0a30daa');
+  wp_enqueue_style('hmnknd_vc_admin_customizations', get_template_directory_uri() . '/admin/assets/css/vc_admin_styles.css', false, '9880649384aea9f1ee166331c0a30daa');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -54,7 +55,7 @@ function roots_jquery_local_fallback($src, $handle = null) {
 add_action('wp_head', 'roots_jquery_local_fallback');
 
 //TODO  get analytics id from options menu!
-function roots_google_analytics() { ?>
+/*function roots_google_analytics() { ?>
 <script>
   (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
   function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -67,4 +68,4 @@ function roots_google_analytics() { ?>
 <?php }
 if (GOOGLE_ANALYTICS_ID && !current_user_can('manage_options')) {
   add_action('wp_footer', 'roots_google_analytics', 20);
-}
+}*/

@@ -10,6 +10,8 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-less": "~0.8.1",
     "grunt-wp-version": "~0.1.0",
-    "grunt-font-awesome-vars": "~1.0.1"
+    "grunt-font-awesome-vars": "~1.0.1",
+    "dalekjs": "0.0.8",
+    "dalek-browser-chrome": "0.0.10"
   }
 }

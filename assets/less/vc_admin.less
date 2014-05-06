@@ -1,0 +1,51 @@
+/**
+* ADMIN STYLES FOR VISUAL COMPOSER
+**/
+
+@admin_hover: #114C7F;
+
+article.vc-icons-wrap {
+  .vc-icon-searchbox {
+    margin-bottom: 10px !important;
+  }
+  .vc-icons-preview {
+    i {
+      vertical-align: middle;
+      padding-left: 10px;
+    }
+  }
+  a {
+    display:inline-block;
+    padding: 4px;
+    width: 32px;
+    text-align: center;
+    transition: all 0.1s;
+    background: #fff;
+    &:hover, &.active {
+      transform: scale(1.5);
+      i {
+        color: @admin_hover;
+      }
+    }
+    &.active {
+      outline: 1px solid;
+    }
+  }
+  i {
+    font-size: 24px;
+   color: #000;
+  }
+  h4 {
+    font-size: 1.1em;
+    text-align: center;
+  }  
+  .vc-icons-wrap-inner {
+    max-height: 300px;
+    margin-top: 10px;
+    padding: 0 30px;
+    overflow-y: scroll;
+    span {
+      display:none;
+    }
+  }
+}
