@@ -18,9 +18,9 @@ add_shortcode('bartag', 'bartag_func');
 
 vc_map( 
   array(
-    "name" => __('Bar tag test'),
+    "name" => __('Section Header'),
     "base" => 'bartag',
-    "description" => '',
+    "description" => 'Styled separator with text and icon',
     "class" => '',
     "show_settings_on_create" => true,
     "weight" => '',
@@ -34,10 +34,10 @@ vc_map(
         "type" => 'vc_icons',
         "holder" => '',
         "class" => '',
-        "heading" => 'Icon choice heading',
+        "heading" => 'Section Header Icon',
         "param_name" => 'icon',
         "value" => '',
-        "description" => 'this is the description',
+        "description" => 'This icon will appear in your section header',
         "admin_label" => true,
         "dependency" => '',
         "edit_field_class" => '',
@@ -47,10 +47,10 @@ vc_map(
         "type" => 'textfield',
         "holder" => '',
         "class" => '',
-        "heading" => 'textfield choice heading',
+        "heading" => 'Section Header Text',
         "param_name" => 'class',
         "value" => '',
-        "description" => 'this is the description',
+        "description" => 'This will be the large, bold text for your header. Think of it like a title for the section.',
         "admin_label" => true,
         "dependency" => '',
         "edit_field_class" => '',
@@ -59,29 +59,3 @@ vc_map(
     )
   )
 );
-/*vc_map( array(
-  "name" => __("Bar tag test"),
-  "base" => "bartag",
-  "class" => "",
-  "description" => '',
-  "class" => '',
-  "show_settings_on_create" => true,
-  "weight" => '',
-  "category" => __('Testing'),
-  "admin_enqueue_css" => '',
-  "admin_enqueue_js" => '',
-  "icon" => '',
-  "js_view" => '',
-  "params" => array(
-    array(
-      "type" => "textfield",
-      "holder" => "",
-      "class" => "",
-      "heading" => __("Text"),
-      "param_name" => "foo",
-      "value" => __("Default params value"),
-      "description" => "Description for foo param."
-    ),
-  )
-) );
- */

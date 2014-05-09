@@ -12,6 +12,7 @@
     "grunt-wp-version": "~0.1.0",
     "grunt-font-awesome-vars": "~1.0.1",
     "dalekjs": "0.0.8",
-    "dalek-browser-chrome": "0.0.10"
+    "dalek-browser-chrome": "0.0.10",
+    "grunt-shell": "~0.7.0"
   }
 }
