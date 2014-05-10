@@ -52,14 +52,17 @@
     '/lib/activation.php',
     '/lib/scripts.php',
     '/lib/timber/utils.php',
-    '/vc_templates/bartag.php',
     '/admin/composer/custom-params.php',
   );
+
   
   function require_all($files) {
     foreach( $files as $file ) {
       //locate_template($file, true, true);
       require_once THEME_DIR . $file;
+    }
+    foreach( glob(THEME_DIR .'/vc_templates/*.php') as $file ) {
+      require_once $file;
     }
   };
 

@@ -8,7 +8,7 @@ class TwigPrepare {
 
     $shortcode_data = [];
     foreach( $atts_map_array as $name => $default ) {
-      $shortcode_atts[$name] = ( $$name ) ? $$name : $default;
+      $shortcode_data[$name] = ( $$name ) ? $$name : $default;
     }
 
     return $shortcode_data;

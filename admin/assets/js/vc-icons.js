@@ -1,4 +1,8 @@
 !function($) {
+  if ( $('.vc_icons_type').val() != "" ) {
+    $('.vc-icons-preview i').addClass($('.vc_icons_type').val()); 
+  }
+
   $('body').on('click', '.vc-icons-wrap-inner a', function(){
     var $this = $(this),
     icon_name = $this.children('i').attr('class');
@@ -6,6 +10,7 @@
     $this.addClass('active');
     $('.vc-icons-preview i').removeClass();
     $('.vc-icons-preview i').addClass(icon_name);
+    //$('input[name="icon"]').val('&lt;i class=&quot;' + icon_name + '&quot;&gt;&lt;/i&gt;');
     $('input[name="icon"]').val(icon_name);
   });
 

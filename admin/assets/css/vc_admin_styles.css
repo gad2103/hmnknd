@@ -68,3 +68,11 @@ article.vc-icons-wrap .vc-icons-wrap-inner {
 article.vc-icons-wrap .vc-icons-wrap-inner span {
   display: none;
 }
+.wpb_column_container > .wpb_section_header .wpb_element_title {
+  display: none;
+}
+.wpb_column_container > .wpb_section_header > .wpb_element_wrapper {
+  height: auto;
+  background-image: none;
+  padding: 10px;
+}
