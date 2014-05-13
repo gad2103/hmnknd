@@ -3,7 +3,8 @@
     $('.vc-icons-preview i').addClass($('.vc_icons_type').val()); 
   }
 
-  $('body').on('click', '.vc-icons-wrap-inner a', function(){
+  $('body').on('click', '.vc-icons-wrap-inner a', function(e){
+    e.preventDefault();
     var $this = $(this),
     icon_name = $this.children('i').attr('class');
     $('.vc-icons-wrap-inner a').removeClass('active');
@@ -24,5 +25,6 @@
       $this.siblings('.vc-icons-wrap-inner a').show();
     }
   });
+
 }(window.jQuery);
 

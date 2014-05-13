@@ -97,6 +97,7 @@ module.exports = function(grunt) {
           'assets/css/main.min.css',
           'assets/js/scripts.min.js',
           'templates/*.php',
+          'vc_templates/*.php',
           '*.php'
         ]
       }

@@ -39,7 +39,7 @@ vc_map(
         "description" => 'This will be the large, bold text for your header. Think of it like a title for the section.',
         "admin_label" => false,
         "dependency" => '',
-        "edit_field_class" => '',
+        "edit_field_class" => 'col-md-12',
         "group" => '',
       ),
       array(
@@ -52,7 +52,7 @@ vc_map(
         "description" => 'This icon will appear in your section header',
         "admin_label" => false,
         "dependency" => '',
-        "edit_field_class" => '',
+        "edit_field_class" => 'col-md-12',
         "group" => '',
       ),
       array(
@@ -65,7 +65,7 @@ vc_map(
         "description" => 'Add a little blurb to explain your header.',
         "admin_label" => false,
         "dependency" => '',
-        "edit_field_class" => '',
+        "edit_field_class" => 'col-md-12',
         "group" => '',
       ),
       array(
@@ -77,8 +77,8 @@ vc_map(
         "description" => 'Add extra classes to this element for reference in your stylesheet.',
         "admin_label" => false,
         "dependency" => '',
-        "edit_field_class" => '',
         "group" => '',
+        "edit_field_class" => 'col-md-12',
       ),
     )
   )
