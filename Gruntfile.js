@@ -16,11 +16,13 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'assets/css/main.min.css': [
-            'assets/less/app.less', 'assets/css/vendor/animate.css/animate.min.css'
+            'assets/less/app.less', 'assets/css/vendor/animate.css/animate.min.css', 'assets/less/vc_elements.less'
           ],
-          'assets/css/vc_styles.css': 'assets/less/vc_customized.less',
-          'admin/assets/css/vc_admin_styles.css': 'assets/less/vc_admin.less'
-          //'admin/assets/css/vendor/bootstrap/glyphicons.min.css' : 'assets/less/bootstrap/glyphicons.less'
+          'assets/css/vc_styles.css': [ 'assets/less/vc_customized.less'],
+          'admin/assets/css/vc_admin_styles.css': [
+            'assets/less/vc_admin.less',
+            'admin/assets/vendor/**/*.css',
+          ]
         },
         options: {
           compress: false,
@@ -41,23 +43,22 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'assets/js/scripts.min.js': [
-            'assets/js/plugins/bootstrap/transition.js',
-            'assets/js/plugins/bootstrap/alert.js',
-            'assets/js/plugins/bootstrap/button.js',
-            'assets/js/plugins/bootstrap/carousel.js',
-            'assets/js/plugins/bootstrap/collapse.js',
-            'assets/js/plugins/bootstrap/dropdown.js',
-            'assets/js/plugins/bootstrap/modal.js',
-            'assets/js/plugins/bootstrap/tooltip.js',
-            'assets/js/plugins/bootstrap/popover.js',
-            'assets/js/plugins/bootstrap/scrollspy.js',
-            'assets/js/plugins/bootstrap/tab.js',
-            'assets/js/plugins/bootstrap/affix.js',
-            'assets/js/plugins/*.js',
+            'assets/js/plugins/**/*.js',
+            '!assets/js/plugins/parallax/*.js',
             'assets/js/_*.js'
+          ],
+          'admin/assets/js/admin-scripts.js': [
+            'admin/assets/js/*.js',
+            '!admin/assets/js/vc-icons.js',
+            '!admin/assets/js/vc-settings-slider.js',
+            'admin/assets/vendor/**/*.js',
+            '!admin/assets/vendor/**/*.min.js'
+            //'admin/assets/js/vendor/**/js/*.js',
           ]
         },
         options: {
+          compress: false,
+          mangle: false
           // JS source map: to enable, uncomment the lines below and update sourceMappingURL based on your install
           // sourceMap: 'assets/js/scripts.min.js.map',
           // sourceMappingURL: '/app/themes/roots/assets/js/scripts.min.js.map'
@@ -98,14 +99,18 @@ module.exports = function(grunt) {
           'assets/js/scripts.min.js',
           'templates/*.php',
           'vc_templates/*.php',
-          '*.php'
+          '*.php',
+          'Gruntfile.js',
+          'admin/assets/js/*.js',
+          '!admin/assets/js/admin-scripts.js'
         ]
       }
     },
     clean: {
       dist: [
         'assets/css/main.min.css',
-        'assets/js/scripts.min.js'
+        'assets/js/scripts.min.js',
+        'admin/assets/js/admin-scripts.js'
       ]
     }
   });
@@ -118,7 +123,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-wp-version');
   grunt.loadNpmTasks('grunt-autoprefixer');
-  //grunt.loadNpmTasks('grunt-font-awesome-vars');
 
   // Register tasks
   grunt.registerTask('default', [
@@ -127,7 +131,6 @@ module.exports = function(grunt) {
     'uglify',
     'version',
     'autoprefixer'
-    //'fontAwesomeVars'
   ]);
   grunt.registerTask('dev', [
     'watch'

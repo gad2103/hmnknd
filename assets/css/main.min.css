@@ -8585,3 +8585,7 @@ figure.alignnone {
   animation-name: rollOut;
 }
 /*# sourceMappingURL=/wp-content/themes/timber-starter-theme/assets/css/main.min.css.map */
+.parallax_section {
+  min-height: 500px;
+}
+/*# sourceMappingURL=/wp-content/themes/timber-starter-theme/assets/css/main.min.css.map */

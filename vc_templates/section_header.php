@@ -6,7 +6,7 @@ function section_header_func( $atts, $content=null ) {
     "header" => '',
     "subheader" => '',
   );
-  $data = TwigPrepare::shortcodes($atts, $atts_default);
+  $data = TwigPrepare::getInstance()->shortcodes($atts, $atts_default);
   $content = wpb_js_remove_wpautop($content);
   $data['content'] = $content;
   return Timber::compile('shortcodes/section_header.twig', $data);
@@ -25,7 +25,7 @@ vc_map(
     "weight" => '',
     "category" => __('Testing'),
     "admin_enqueue_css" => '',
-    "admin_enqueue_js" => THEME_ADMIN_ASSETS_URL . '/js/vc-icons.js',
+    //"admin_enqueue_js" => THEME_ADMIN_ASSETS_URL . '/js/vc-icons.js',
     "icon" => '',
     "js_view" => '',
     "params" => array(

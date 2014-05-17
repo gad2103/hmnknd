@@ -1,6 +1,12 @@
-<li>
-  {% if icon %}
-    <i class="{{ icon }} {{ icon_side }}"></i>
-  {% endif %}
-  {{ content }}
-</li>
+{% for key, item in content.parent %}
+  {% if not key == 'children' %}
+      <li><i class="{{ icon }} {{ icon_side }}"></i> {{ item }}</li>
+    {% endif %}
+    <ul>
+      {% if key == 'children' %}
+        {% for child in item %}
+          <li><i class="{{ icon }} {{ icon_side }}"></i> {{ child }}</li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+{% endfor %}

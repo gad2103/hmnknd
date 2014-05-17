@@ -1,0 +1,19 @@
+<h4> {{ header }} </h4>
+{% for key, item in content.parent %}
+  {% if not key == 'children' %}
+    {% if loop.first %}
+      <ul class="{{ orientation }} {{ class }}">
+    {% endif %}
+      <li><i class="{{ icon }} {{ icon_side }}"></i> {{ item }}</li>
+  {% endif %}
+  {% if key == 'children' and item is iterable %}
+    <ul class="{{ orientation }}">
+        {% for child in item %}
+          <li><i class="{{ icon }} {{ icon_side }}"></i> {{ child }}</li>
+        {% endfor %}
+    </ul>
+  {% endif %}
+  {% if loop.last %}
+    </ul>
+  {% endif %}
+{% endfor %}

@@ -57,10 +57,6 @@ $framework_dependencies = array(
 
 
 function require_all($dirs) {
-    /*foreach( $files as $file ) {
-      //locate_template($file, true, true);
-      require_once THEME_DIR . $file;
-    }*/
   foreach ( $dirs as $dir ) {
     foreach( glob(THEME_DIR . $dir . '*.php') as $file ) {
       require_once $file;
@@ -103,52 +99,4 @@ function myfoo($text){
 function load_scripts(){
   wp_enqueue_script('jquery');
 }
-  /* Tabs
-  ---------------------------------------------------------- */
-  /*$tab_id_1 = time().'-1-'.rand(0, 100);
-  $tab_id_2 = time().'-2-'.rand(0, 100);
-  vc_map( array(
-    "name"  => __("Tabs Minimal", "js_composer"),
-    "base" => "vc_tabs_minimal",
-    "show_settings_on_create" => false,
-    "is_container" => true,
-    "icon" => "icon-wpb-ui-tab-content",
-    "category" => __('Content', 'js_composer'),
-    "description" => __('Tabbed content minimal style', 'js_composer'),
-    "params" => array(
-      array(
-        "type" => "textfield",
-        "heading" => __("Widget title", "js_composer"),
-        "param_name" => "title",
-        "description" => __("Enter text which will be used as widget title. Leave blank if no title is needed.", "js_composer")
-      ),
-      array(
-        "type" => "dropdown",
-        "heading" => __("Auto rotate tabs", "js_composer"),
-        "param_name" => "interval",
-        "value" => array(__("Disable", "js_composer") => 0, 3, 5, 10, 15),
-        "std" => 0,
-        "description" => __("Auto rotate tabs each X seconds.", "js_composer")
-      ),
-      array(
-        "type" => "textfield",
-        "heading" => __("Extra class name", "js_composer"),
-        "param_name" => "el_class",
-        "description" => __("If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.", "js_composer")
-      )
-    ),
-    "custom_markup" => '
-    <div class="wpb_tabs_holder wpb_holder vc_container_for_children">
-    <ul class="tabs_controls">
-    </ul>
-    %content%
-    </div>'
-    ,
-    'default_content' => '
-    [vc_tab title="'.__('Tab 1','js_composer').'" tab_id="'.$tab_id_1.'"][/vc_tab]
-    [vc_tab title="'.__('Tab 2','js_composer').'" tab_id="'.$tab_id_2.'"][/vc_tab]
-    ',
-    "js_view" => ($vc_is_wp_version_3_6_more ? 'VcTabsView' : 'VcTabsView35')
-  ) );*/
-
 
