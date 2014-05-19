@@ -1,2 +1,4 @@
 *.swp
 node_modules/
+assets/js/vendor/
+assets/js/plugins/

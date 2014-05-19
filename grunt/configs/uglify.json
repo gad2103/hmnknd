@@ -1,0 +1,22 @@
+{
+  "dist": {
+    "files": {
+      "assets/js/scripts.min.js": [
+        "assets/js/plugins/**/*.js",
+        "!assets/js/plugins/parallax/*.js",
+        "assets/js/_*.js"
+      ],
+      "admin/assets/js/admin-scripts.js": [
+        "admin/assets/js/*.js",
+        "!admin/assets/js/vc-icons.js",
+        "!admin/assets/js/vc-settings-slider.js",
+        "admin/assets/vendor/**/*.js",
+        "!admin/assets/vendor/**/*.min.js"
+      ]
+    },
+    "options": {
+      "compress": false,
+      "mangle": false
+    }
+  }
+}

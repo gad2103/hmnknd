@@ -1,0 +1,38 @@
+{
+  "less": {
+    "files": [
+      "assets/less/*.less",
+      "assets/less/bootstrap/*.less"
+    ],
+    "tasks": [
+      "less",
+      "version",
+      "autoprefixer"
+    ]
+  },
+  "js": {
+    "files": [
+      "<%= jshint.all %>"
+    ],
+    "tasks": [
+      "jshint",
+      "uglify",
+      "version"
+    ]
+  },
+  "livereload": {
+    "options": {
+      "livereload": false
+    },
+    "files": [
+      "assets/css/main.min.css",
+      "assets/js/scripts.min.js",
+      "templates/*.php",
+      "vc_templates/*.php",
+      "*.php",
+      "Gruntfile.js",
+      "admin/assets/js/*.js",
+      "!admin/assets/js/admin-scripts.js"
+    ]
+  }
+}
