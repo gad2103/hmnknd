@@ -1,9 +1,12 @@
 {
-  "install": {
+  "dev": {
+    "dest": "assets/",
+    "js_dest": "assets/js/plugins/",
     "options": {
-      "targetDir": "assets/",
-      "layout": "byType",
-      "cleanTargetDir": false
+      "packageSpecific": {
+        "animate.css": {
+        }
+      }
     }
   }
 }
