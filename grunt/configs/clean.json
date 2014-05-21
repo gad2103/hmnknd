@@ -1,7 +1,3 @@
 {
-  "dist": [
-    "assets/css/main.min.css",
-    "assets/js/scripts.min.js",
-    "admin/assets/js/admin-scripts.js"
-  ]
+  "dist": [ "assets/css/main.min.css", "assets/js/scripts.min.js", "admin/assets/js/admin-scripts.js" ]
 }

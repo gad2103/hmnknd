@@ -9,5 +9,19 @@
     "respond": "latest",
     "retina.js": "latest",
     "skrollr": "~0.6.24"
+  },
+  "exportsOverride": {
+    "animate.css": {
+      "css": "css/animate.min.css"
+    },
+    "fitvids": {
+      "js": "js/plugins/*.js"
+    },
+    "fittext": {
+      "js": "js/plugins/*.js"
+    }, 
+    "html5shiv": {
+      "js": "js/plugins/*.js" 
+    }
   }
 }

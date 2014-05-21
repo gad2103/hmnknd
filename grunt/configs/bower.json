@@ -1,0 +1,9 @@
+{
+  "install": {
+    "options": {
+      "targetDir": "assets/",
+      "layout": "byType",
+      "cleanTargetDir": false
+    }
+  }
+}
